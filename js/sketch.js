@@ -49,4 +49,9 @@ function draw() {
     pop();
 }
 //  text(frameCount, width/2, height/2);
+var firstPoint = JSON.parse(localStorage.getItem("firstPoint"));
+var lastPoint = JSON.parse(localStorage.getItem("lastPoint"));
+if (firstPoint && lastPoint){
+line(firstPoint.X,firstPoint.Y,lastPoint.X,lastPoint.Y);
+}
 }
