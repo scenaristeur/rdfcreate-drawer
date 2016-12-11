@@ -1,0 +1,64 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../app-storage/app-localstorage/app-localstorage-document.html">
+
+<script src="lib/p5.js"></script>
+<script src="lib/p5.dom.js"></script>
+<script src="js/sketch.js"></script>
+<!--
+`rdfcreate-drawer`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="rdfcreate-drawer">
+  <template>
+    <style>
+      :host {
+        display: block;
+      },
+
+    </style>
+<!--    canvas {position : absolute ; top :0px ; left :0px; }-->
+    <app-localstorage-document key="noeuds" data="{{noeuds}}">
+</app-localstorage-document>
+<app-localstorage-document key="lastForme" data="{{lastNoeud}}">
+</app-localstorage-document>
+
+  <!--  <canvas id="myDrawer"
+      style = 'background : skyblue; position:absolute ; top :0px ; left :0px;  z-index:0;  opacity:0.5;'
+        width="800 px"
+        height="600 px">
+      </canvas> -->
+      <div id="result"></div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'rdfcreate-drawer',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'rdfcreate-drawer',
+        },
+        noeuds:{
+          notify:true,
+          observer: '_noeudsChanged'
+        },
+        lastNoeud:{
+          observer: '_lastNoeudChanged'
+        },
+      },
+      _noeudsChanged: function(data){
+        console.log(data);
+        console.log(this.noeuds);
+      },
+      _lastNoeudChanged: function(data){
+        console.log(data);
+      }
+
+    });
+  </script>
+</dom-module>
