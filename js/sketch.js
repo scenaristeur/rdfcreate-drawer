@@ -41,9 +41,9 @@ function draw() {
   //  var taille=textWidth(noeud.thingName);
 
     var nom=noeud.thingName;
-    console.log(nom);
+  //  console.log(nom);
         var taille = nom.length;
-        console.log(taille);
+    //    console.log(taille);
     ellipse(0,0,20+taille*5,20+taille*2);
     text(noeud.thingName,0,0+4);
     pop();
